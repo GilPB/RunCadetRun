@@ -3,9 +3,10 @@ package org.academiadecodigo.bootcamp.GameObjects;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public enum PickAPlayer {
-    /*GIL(),
-    HUGO(),
-    FRED(),
+    GIL(Gil.JPG, "estava um gajo no comboio todo maluco"),
+    FRED(fred2.JPG, "fds só cheguei a casa à uma");
+    /*
+    HUGO();
     RUI(),
     NUNO(),
     JOANA(),
@@ -19,7 +20,7 @@ public enum PickAPlayer {
     RAQUEL(),
     CATARINA(),
     ANTÓNIO(),
-    JOHNNYSINS();
+    JOHNNYSINS();*/
 
     private String catchPhrase;
     private Picture photos;
@@ -27,5 +28,5 @@ public enum PickAPlayer {
     PickAPlayer(Picture photos, String phrase){
         this.photos=photos;
         catchPhrase=phrase;
-    }*/
+    }
 }
