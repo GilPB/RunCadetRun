@@ -1,7 +1,6 @@
 package org.academiadecodigo.bootcamp.GameObjects;
 
 import org.academiadecodigo.bootcamp.GameEnvironment.Field;
-import org.academiadecodigo.bootcamp.GameObjects.CodeCadets;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -9,11 +8,11 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 public class Controller implements KeyboardHandler {
     private Keyboard keyboard;
-    private CodeCadets smoothOOPerators;
+    private CodeCadets player;
 
     public Controller(Field background, CodeCadets player){
         keyboard = new Keyboard(this);
-        smoothOOPerators=player;
+        this.player =player;
     }
 
     public void init(){
@@ -41,19 +40,17 @@ public class Controller implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         if(keyboardEvent.getKey()== KeyboardEvent.KEY_RIGHT){
-            smoothOOPerators.moveRight();
+            player.moveRight();
         } else if(keyboardEvent.getKey()== KeyboardEvent.KEY_LEFT){
-            smoothOOPerators.moveLeft();
+            player.moveLeft();
         } else if(keyboardEvent.getKey()== KeyboardEvent.KEY_UP){
-            smoothOOPerators.moveUp();
+            player.moveUp();
         } else if (keyboardEvent.getKey()== KeyboardEvent.KEY_DOWN){
-            smoothOOPerators.moveDown();
+            player.moveDown();
         }
     }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
-        keyboardEvent.
-
     }
 }

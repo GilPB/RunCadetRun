@@ -1,43 +1,40 @@
 package org.academiadecodigo.bootcamp.GameObjects;
 
 import org.academiadecodigo.bootcamp.GameEnvironment.Field;
+import org.academiadecodigo.bootcamp.GameEnvironment.Position;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CodeCadets extends Person{
-    private Picture picture;
-    private Field field;
 
-    public CodeCadets(Field field){
 
-        this.field=field;
-        picture = new Picture(Field.PADDING, Field.PADDING, "pikachu.png");
-        picture.draw();
+    public CodeCadets(Field field, Position pos, PickAPlayer player){
+        super(field, pos, player);
     }
 
     public void moveRight(){
-        if(picture.getMaxX()>=field.getPicture().getWidth()){
+        if(getPic().getMaxX()>=getField().getPicture().getWidth()){
             return;
         }
-        picture.translate(10, 0);
+        getPic().translate(30, 0);
 
     }
     public void moveLeft(){
-        if(picture.getX()==field.getPicture().getX()){
+        if(getPic().getX()==getField().getPicture().getX()){
             return;
         }
-        picture.translate(-10, 0);
+        getPic().translate(-30, 0);
     }
     public void moveUp(){
-        if(picture.getY()==field.getPicture().getY()){
+        if(getPic().getY()==getField().getPicture().getY()){
             return;
         }
-        picture.translate(0, -10);
+        getPic().translate(0, -30);
 
     }
     public void moveDown() {
-        if (picture.getMaxY() >= field.getPicture().getHeight()) {
+        if (getPic().getMaxY() >= getField().getPicture().getHeight()) {
             return;
         }
-        picture.translate(0, 10);
+        getPic().translate(0, 30);
     }
 }

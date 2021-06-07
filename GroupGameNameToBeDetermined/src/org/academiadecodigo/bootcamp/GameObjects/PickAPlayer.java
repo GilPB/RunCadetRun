@@ -5,7 +5,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public enum PickAPlayer {
     GIL("Gil.JPG", "estava um gajo no comboio todo maluco"),
-    FRED("fred2.JPG", "fds só cheguei a casa à uma");
+    FRED("fred2.JPG", "fds só cheguei a casa à uma"),
     /*
     HUGO();
     RUI(),
@@ -20,14 +20,18 @@ public enum PickAPlayer {
     CHRISTINA(),
     RAQUEL(),
     CATARINA(),
-    ANTÓNIO(),
-    JOHNNYSINS();*/
+    ANTÓNIO(),*/
+    JOHNNYSINS("images.jpeg", "Did someone order a Pizza??");
 
     private String catchPhrase;
-    private Picture photos;
+    private String photos;
 
     PickAPlayer(String photos, String phrase){
-        this.photos=new Picture(Field.PADDING,Field.PADDING, photos);
+        this.photos = photos;
         catchPhrase=phrase;
+    }
+
+    public String getPhotos(){
+        return photos;
     }
 }
