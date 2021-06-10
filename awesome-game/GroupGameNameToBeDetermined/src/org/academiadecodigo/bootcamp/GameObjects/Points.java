@@ -11,6 +11,7 @@ public class Points {
     private Position pos;
     private Picture pic;
     private Field field;
+    private boolean collected;
 
     public Points(Field field, Position pos, Objectives pick){
         this.pick=pick;
@@ -21,7 +22,18 @@ public class Points {
         pic.draw();
     }
 
-    public int givePoints(){
+    public boolean isCollected() {
+        return collected;
+    }
+
+    public Position getPos() {
+        return pos;
+    }
+
+    public int collect(){
+        collected=true;
+        pic.delete();
+        pos=null;
         return pick.getPoints();
     }
 }
