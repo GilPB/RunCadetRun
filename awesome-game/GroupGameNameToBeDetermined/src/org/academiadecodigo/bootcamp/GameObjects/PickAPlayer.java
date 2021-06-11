@@ -4,31 +4,26 @@ import org.academiadecodigo.bootcamp.GameEnvironment.Field;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public enum PickAPlayer {
-    GIL("Gil.JPG", ""),
-    FRED("fred2.JPG", "");
-    /*
-    HUGO();
-    RUI(),
-    NUNO(),
-    JOANA(),
-    PEDRO(),
-    MIGUEL(),
-    CARLA(),
-    ALBERTO(),
-    JOÃO(),
-    JÓNI(),
-    CHRISTINA(),
-    RAQUEL(),
-    CATARINA(),
-    ANTÓNIO();*/
+    RAQUEL("raquel.png"),
+    CHRISTINA("chris.png"),
+    GIL("gil.png"),
+    FRED("fred.png"),
+    HUGO("hugo.png"),
+    RUI("rui.png"),
+    NUNO("nuno.png"),
+    JOANA("joana.png"),
+    PEDRO("pedro.png"),
+    MIGUEL("miguel.png"),
+    CARLA("carla.png"),
+    ALBERTO("alberto.png"),
+    JOÃO("joao.png"),
+    JÓNI("joni.png"),
+    CATARINA("catarina.png");
 
-
-    private String catchPhrase;
     private String photos;
 
-    PickAPlayer(String photos, String phrase){
+    PickAPlayer(String photos){
         this.photos = photos;
-        catchPhrase=phrase;
     }
 
     public String getPhotos(){

@@ -10,8 +10,6 @@ public class Position {
         this.field=field;
         col = (int) Math.floor(Math.random() * field.xToCol(field.getWidth()));
         row = (int) Math.floor(Math.random() * field.yToRow(field.getHeight()));
-        System.out.println(col);
-        System.out.println(row);
     }
 
     public Position(int col, int row, Field field) {

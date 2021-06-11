@@ -1,18 +1,18 @@
 package org.academiadecodigo.bootcamp.GameObjects;
 
 public enum Objectives {
-    DUCK("", 200),
-    MONKEY("", 300),
-    RAGNAR("", 500),
-    UNICORN("",1000),
-    BIGDUCK("", 1500),
-    BABYYODA("", 3000),
-    FINALPRIZE("graduate.png", 5000);
+    DUCK("rubberduck.png", 200),
+    MONKEY("monkey.png", 300),
+    BEAR("bear.png", 500),
+    RAGNAR("ragnar.png", 1000),
+    UNICORN("unicorn.png",1500),
+    BABYYODA("babyyoda.png", 3000),
+    FINALPRIZE("grad.png", 50000);
 
     private int points;
     private String pic;
 
-    private Objectives(String pic, int points){
+    Objectives(String pic, int points){
         this.points=points;
         this.pic=pic;
     }

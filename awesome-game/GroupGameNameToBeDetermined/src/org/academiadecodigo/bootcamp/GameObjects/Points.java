@@ -13,11 +13,11 @@ public class Points {
     private Field field;
     private boolean collected;
 
-    public Points(Field field, Position pos, Objectives pick){
+    public Points(Field field, Objectives pick){
         this.pick=pick;
         picName = pick.getPic();
         this.field = field;
-        this.pos = pos;
+        pos = new Position(field);
         pic = new Picture(field.colToX(pos.getCol()), field.rowToY(pos.getRow()), picName);
         pic.draw();
     }
@@ -33,7 +33,8 @@ public class Points {
     public int collect(){
         collected=true;
         pic.delete();
-        pos=null;
+        pos.setRow(-1);
+        pos.setCol(-1);
         return pick.getPoints();
     }
 }

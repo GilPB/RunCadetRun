@@ -6,54 +6,43 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Person {
 
-    private String picName;
     private PickAPlayer player;
+    private Field field;
     private Position pos;
     private Picture pic;
-    private Field field;
+
 
     public Person(Field field, Position pos, PickAPlayer player){
+        this.field=field;
         this.player = player;
-        picName = player.getPhotos();
-        this.field = field;
         this.pos = pos;
-        pic = new Picture(field.colToX(pos.getCol()), field.rowToY(pos.getRow()), picName);
+        pic = new Picture(field.colToX(pos.getCol()), field.rowToY(pos.getRow()), player.getPhotos());
         pic.draw();
     }
 
     public Picture getPic() {
         return pic;
     }
-
-    public Field getField() {
-        return field;
-    }
-
     public Position getPos() {
         return pos;
     }
 
-    public void setPos(Position pos) {
-        this.pos = pos;
-    }
-
     public void moveRight(){
-        if((getPic().getX()+getPic().getWidth())>=getField().getPicture().getWidth()){
+        if((pic.getX()+pic.getWidth())>=field.getPicture().getWidth()){
             return;
         }
-        getPic().translate(Field.CELL_SIZE, 0);
-        getPos().setCol(getPos().getCol()+1);
-
+        pic.translate(Field.CELL_SIZE, 0);
+        pos.setCol(getPos().getCol() + 1);
     }
     public void moveLeft(){
-        if(getPic().getX()==getField().getPicture().getX()){
+        if(getPic().getX()==field.getPicture().getX()){
             return;
         }
         getPic().translate(-(Field.CELL_SIZE), 0);
         getPos().setCol(getPos().getCol()-1);
     }
     public void moveUp(){
-        if(getPic().getY()==getField().getPicture().getY()){
+        if(getPic().getY()==field.getPicture().getY()){
             return;
         }
         getPic().translate(0, -(Field.CELL_SIZE));
@@ -61,7 +50,7 @@ public abstract class Person {
 
     }
     public void moveDown() {
-        if (getPic().getMaxY() >= getField().getPicture().getHeight()) {
+        if (getPic().getMaxY() >= field.getPicture().getHeight()) {
             return;
         }
         getPic().translate(0, Field.CELL_SIZE);

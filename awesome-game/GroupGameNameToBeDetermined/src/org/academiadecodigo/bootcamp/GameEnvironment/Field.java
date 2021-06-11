@@ -5,7 +5,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Field {
     private Picture picture;
     public static final int PADDING = 10;
-    public static final int CELL_SIZE = 30;
+    public static final int CELL_SIZE = 50;
     private int width;
     private int height;
 
@@ -13,8 +13,10 @@ public class Field {
     public Field(){
         picture = new Picture(PADDING,PADDING, "ac_logo.png");
         picture.draw();
-        width = picture.getWidth();
-        height = picture.getHeight();
+        width = PADDING + picture.getWidth();
+        height = PADDING + picture.getHeight();
+        System.out.println(xToCol(width));
+        System.out.println(yToRow(height));
     }
 
     public Picture getPicture() {

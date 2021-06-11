@@ -13,6 +13,14 @@ public class CodeCadets extends Person{
         lifeNumber = 3;
     }
 
+    public int getLifeNumber(){
+        return lifeNumber;
+    }
+
+    public boolean isDead(){
+        return lifeNumber == 0;
+    }
+
     public void gotCaught(){
         lifeNumber--;
     }

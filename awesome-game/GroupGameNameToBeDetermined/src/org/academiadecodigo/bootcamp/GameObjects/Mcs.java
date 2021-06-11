@@ -8,4 +8,20 @@ public class Mcs extends Person{
         super(field,pos,player);
     }
 
+    public void move(){
+        switch((int) (Math.random()*4)) {
+            case 0:
+                moveUp();
+                break;
+            case 1:
+                moveDown();
+                break;
+            case 2:
+                moveLeft();
+                break;
+            case 3:
+                moveRight();
+                break;
+        }
+    }
 }
