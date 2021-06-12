@@ -34,6 +34,8 @@ public class Controller implements KeyboardHandler {
         moveUpEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         moveDownEvent.setKey(KeyboardEvent.KEY_DOWN);
         moveDownEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
+
         stopMoveRight.setKey(KeyboardEvent.KEY_RIGHT);
         stopMoveRight.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         stopMoveLeft.setKey(KeyboardEvent.KEY_LEFT);
@@ -67,11 +69,11 @@ public class Controller implements KeyboardHandler {
 
         } else if (keyboardEvent.getKey()== KeyboardEvent.KEY_DOWN){
             player.moveDown();
-
         }
     }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
+
     }
 }

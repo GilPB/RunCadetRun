@@ -3,6 +3,7 @@ package org.academiadecodigo.bootcamp;
 import org.academiadecodigo.bootcamp.GameEnvironment.Field;
 import org.academiadecodigo.bootcamp.GameEnvironment.Position;
 import org.academiadecodigo.bootcamp.GameObjects.*;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Game {
 
@@ -13,22 +14,49 @@ public class Game {
     private Points[] pointsObj = new Points[5];
     private Field field;
     private boolean playerWins = false;
+    private Picture menu;
+    private Picture instructions;
+    private Picture chooseAPlayer;
+    private MainMenuController controller1 = new MainMenuController(this);
+    private MainMenuController2 controller2;
+    private ChooseAPlayerController controller3;
+    public PickAPlayer choose;
+    public boolean solveThis = false;
 
-    public Game(PickAPlayer player){
-        this.playerOne=player;
-        field = new Field();
+    public Game(Field field){
+        this.field = field;
         objectivesFactory = new ObjectivesFactory(field);
+        menu = new Picture(Field.PADDING,Field.PADDING, "runcadetrun.png");
+        instructions= new Picture(Field.PADDING,Field.PADDING,"instructions.png");
+        chooseAPlayer= new Picture(Field.PADDING,Field.PADDING,"chooseplayer.png");
+        menu.draw();
+        controller1.init();
     }
 
+    public void getInstructions(){
+        controller1 = null;
+        instructions.draw();
+        controller2=new MainMenuController2(this);
+        controller2.init();
 
+    }
 
-    public void start(){
+    public void chooseAPlayerMenu(){
+        controller2 = null;
+        chooseAPlayer.draw();
+        controller3=new ChooseAPlayerController(this);
+        controller3.init();
+    }
 
-        //Position playerPos = new Position((field.xToCol(field.getWidth())/2), (field.yToRow(field.getHeight()/2)), field);
+    public void start(PickAPlayer player){
+        Picture live1 = new Picture(Field.PADDING, field.getHeight()+10, "lives.png");
+        live1.draw();
+        playerOne=player;
+        field.drawField();
         Position playerPos = new Position(8,8,field);
         Mcs mc = new Mcs(field, new Position(field), PickAPlayer.RAQUEL);
-        CodeCadets player = new CodeCadets(field, playerPos, playerOne);
-        Controller controller= new Controller(player);
+        CodeCadets newPlayer = new CodeCadets(field, playerPos, playerOne);
+        Controller controller= new Controller(newPlayer);
         controller.init();
         spawnObj();
         boolean highScoreReached = false;
@@ -37,21 +65,21 @@ public class Game {
         Mcs mc3 = null;
 
 
-        while (!player.isDead() && !playerWins){
-            System.out.println(player.getLifeNumber());
-            if(player.getPos().getCol() == mc.getPos().getCol() && player.getPos().getRow() == mc.getPos().getRow()){
-                player.gotCaught();
+        while (!newPlayer.isDead() && !playerWins){
+            System.out.println(newPlayer.getLifeNumber());
+            if(newPlayer.getPos().getCol() == mc.getPos().getCol() && newPlayer.getPos().getRow() == mc.getPos().getRow()){
+                newPlayer.gotCaught();
             }
             if(mc2!=null){
                 mc2.move();
-                if(player.getPos().getCol() == mc2.getPos().getCol() && player.getPos().getRow() == mc2.getPos().getRow()){
-                    player.gotCaught();
+                if(newPlayer.getPos().getCol() == mc2.getPos().getCol() && newPlayer.getPos().getRow() == mc2.getPos().getRow()){
+                    newPlayer.gotCaught();
                 }
             }
             if(mc3!=null){
                 mc3.move();
-                if(player.getPos().getCol() == mc3.getPos().getCol() && player.getPos().getRow() == mc3.getPos().getRow()){
-                    player.gotCaught();
+                if(newPlayer.getPos().getCol() == mc3.getPos().getCol() && newPlayer.getPos().getRow() == mc3.getPos().getRow()){
+                    newPlayer.gotCaught();
                 }
             }
 
@@ -76,14 +104,14 @@ public class Game {
                 winCon = new Points(field, Objectives.FINALPRIZE);
 
             } else if (highScoreReached){
-                if (player.getPos().getRow() == winCon.getPos().getRow() && player.getPos().getCol() == winCon.getPos().getCol()) {
+                if (newPlayer.getPos().getRow() == winCon.getPos().getRow() && newPlayer.getPos().getCol() == winCon.getPos().getCol()) {
                     winCon.collect();
                     playerWins=true;
                 }
             }
             if(pointsObj[0]!=null) {
                 for (int p = 0; p < pointsObj.length; p++) {
-                    if (player.getPos().getRow() == pointsObj[p].getPos().getRow() && player.getPos().getCol() == pointsObj[p].getPos().getCol()) {
+                    if (newPlayer.getPos().getRow() == pointsObj[p].getPos().getRow() && newPlayer.getPos().getCol() == pointsObj[p].getPos().getCol()) {
                         score += pointsObj[p].collect();
                         pointsObj[p] = objectivesFactory.spawnObjectives();
                         System.out.println(score);

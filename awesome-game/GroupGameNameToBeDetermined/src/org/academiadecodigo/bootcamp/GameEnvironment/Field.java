@@ -10,13 +10,16 @@ public class Field {
     private int height;
 
 
-    public Field(){
-        picture = new Picture(PADDING,PADDING, "ac_logo.png");
-        picture.draw();
+    public Field() {
+        picture = new Picture(PADDING, PADDING, "ac_logo.png");
         width = PADDING + picture.getWidth();
         height = PADDING + picture.getHeight();
         System.out.println(xToCol(width));
         System.out.println(yToRow(height));
+    }
+
+    public void drawField(){
+        picture.draw();
     }
 
     public Picture getPicture() {

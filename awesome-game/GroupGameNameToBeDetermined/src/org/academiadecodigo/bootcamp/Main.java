@@ -1,14 +1,20 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.GameEnvironment.Field;
-import org.academiadecodigo.bootcamp.GameEnvironment.Position;
-import org.academiadecodigo.bootcamp.GameObjects.*;
+import org.academiadecodigo.bootcamp.GameObjects.PickAPlayer;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Main {
     public static void main(String[] args) {
-        Sound gameSound = new Sound("resources/pacman.wav");
+
+        Field field = new Field();
+        Game game = new Game(field);
+        Sound gameSound = new Sound("resources/bumblebee.wav");
         gameSound.play(true);
-        Game g= new Game(PickAPlayer.FRED);
-        g.start();
+        gameSound.setLoop(4000);
+        while(!game.solveThis){
+            Thread.yield();
+        }
+        game.start(game.choose);
     }
 }
