@@ -9,7 +9,6 @@ public class MainMenuController2 implements KeyboardHandler {
 
     private Game newGame;
     private Keyboard mainKeys;
-    private boolean keyPressed;
 
 
     public MainMenuController2(Game newGame) {

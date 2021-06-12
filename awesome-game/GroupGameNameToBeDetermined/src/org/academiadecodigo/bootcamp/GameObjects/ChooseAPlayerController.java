@@ -10,7 +10,6 @@ public class ChooseAPlayerController implements KeyboardHandler {
 
     private Game newGame;
     private Keyboard mainKeys;
-    private boolean keyPressed;
 
 
     public ChooseAPlayerController(Game newGame) {

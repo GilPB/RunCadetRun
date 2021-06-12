@@ -3,11 +3,12 @@ package org.academiadecodigo.bootcamp;
 import org.academiadecodigo.bootcamp.GameEnvironment.Field;
 import org.academiadecodigo.bootcamp.GameEnvironment.Position;
 import org.academiadecodigo.bootcamp.GameObjects.*;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Game {
 
-    private int score;
+    private Integer score = 0;
     private int delay = 300;
     private PickAPlayer playerOne;
     private ObjectivesFactory objectivesFactory;
@@ -50,7 +51,13 @@ public class Game {
 
     public void start(PickAPlayer player){
         Picture live1 = new Picture(Field.PADDING, field.getHeight()+10, "lives.png");
+        Picture live2 = new Picture(live1.getMaxX() + 10, field.getHeight()+10, "lives.png");
+        Picture live3 = new Picture(live2.getMaxX() + 10, field.getHeight()+10, "lives.png");
         live1.draw();
+        live2.draw();
+        live3.draw();
+        Text printScore;
+        Picture[] lives= {live1, live2, live3};
         playerOne=player;
         field.drawField();
         Position playerPos = new Position(8,8,field);
@@ -66,20 +73,48 @@ public class Game {
 
 
         while (!newPlayer.isDead() && !playerWins){
-            System.out.println(newPlayer.getLifeNumber());
+            printScore = new Text(field.getWidth() -85, field.getHeight() +10, "Score: "+score.toString());
+            printScore.draw();
             if(newPlayer.getPos().getCol() == mc.getPos().getCol() && newPlayer.getPos().getRow() == mc.getPos().getRow()){
                 newPlayer.gotCaught();
+                if(lives[2] != null){
+                    lives[2].delete();
+                    lives[2] = null;
+                } else if (lives[1] != null){
+                    lives[1].delete();
+                    lives[1] = null;
+                } else {
+                    lives[0].delete();
+                }
             }
             if(mc2!=null){
                 mc2.move();
                 if(newPlayer.getPos().getCol() == mc2.getPos().getCol() && newPlayer.getPos().getRow() == mc2.getPos().getRow()){
                     newPlayer.gotCaught();
+                    if(lives[2] != null){
+                        lives[2].delete();
+                        lives[2] = null;
+                    } else if (lives[1] != null){
+                        lives[1].delete();
+                        lives[1] = null;
+                    } else {
+                        lives[0].delete();
+                    }
                 }
             }
             if(mc3!=null){
                 mc3.move();
                 if(newPlayer.getPos().getCol() == mc3.getPos().getCol() && newPlayer.getPos().getRow() == mc3.getPos().getRow()){
                     newPlayer.gotCaught();
+                    if(lives[2] != null){
+                        lives[2].delete();
+                        lives[2] = null;
+                    } else if (lives[1] != null){
+                        lives[1].delete();
+                        lives[1] = null;
+                    } else {
+                        lives[0].delete();
+                    }
                 }
             }
 
@@ -124,8 +159,17 @@ public class Game {
                 break;
             }
             mc.move();
+            printScore.delete();
 
 
+        }
+
+        if(newPlayer.isDead()){
+            Picture gameOver = new Picture(Field.PADDING, Field.PADDING, "gameover.png");
+            gameOver.draw();
+        } else {
+            Picture winner = new Picture(Field.PADDING, Field.PADDING, "winner.png");
+            winner.draw();
         }
     }
 
