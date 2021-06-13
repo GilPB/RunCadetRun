@@ -23,6 +23,8 @@ public class Game {
     private ChooseAPlayerController controller3;
     public PickAPlayer choose;
     public boolean solveThis = false;
+    private boolean youWin = false;
+    private boolean loser = false;
 
     public Game(Field field){
         this.field = field;
@@ -47,6 +49,14 @@ public class Game {
         chooseAPlayer.draw();
         controller3=new ChooseAPlayerController(this);
         controller3.init();
+    }
+
+    public boolean isLoser() {
+        return loser;
+    }
+
+    public boolean isWinner(){
+        return youWin;
     }
 
     public void start(PickAPlayer player){
@@ -159,17 +169,20 @@ public class Game {
                 break;
             }
             mc.move();
-            printScore.delete();
-
+            if(!newPlayer.isDead() && !playerWins){
+                printScore.delete();
+            }
 
         }
 
         if(newPlayer.isDead()){
             Picture gameOver = new Picture(Field.PADDING, Field.PADDING, "gameover.png");
             gameOver.draw();
+            loser = true;
         } else {
             Picture winner = new Picture(Field.PADDING, Field.PADDING, "winner.png");
             winner.draw();
+            youWin = true;
         }
     }
 

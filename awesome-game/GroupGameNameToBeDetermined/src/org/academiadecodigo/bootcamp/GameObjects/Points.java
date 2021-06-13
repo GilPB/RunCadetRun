@@ -22,10 +22,6 @@ public class Points {
         pic.draw();
     }
 
-    public boolean isCollected() {
-        return collected;
-    }
-
     public Position getPos() {
         return pos;
     }

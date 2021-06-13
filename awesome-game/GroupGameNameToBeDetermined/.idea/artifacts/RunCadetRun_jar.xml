@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RunCadetRun:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RunCadetRun_jar</output-path>
+    <root id="archive" name="RunCadetRun.jar">
+      <element id="module-output" name="RunCadetRun" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/simplegraphics.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

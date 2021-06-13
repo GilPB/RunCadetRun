@@ -1,6 +1,5 @@
 package org.academiadecodigo.bootcamp;
 
-import org.academiadecodigo.bootcamp.GameObjects.PickAPlayer;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
