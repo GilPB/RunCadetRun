@@ -9,7 +9,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Game {
 
     private Integer score = 0;
-    private int delay = 300;
+    private int delay = 400;
     private PickAPlayer playerOne;
     private ObjectivesFactory objectivesFactory;
     private Points[] pointsObj = new Points[5];
@@ -98,7 +98,7 @@ public class Game {
                 }
             }
             if(mc2!=null){
-                mc2.move();
+                mc2.moveRandom(newPlayer);
                 if(newPlayer.getPos().getCol() == mc2.getPos().getCol() && newPlayer.getPos().getRow() == mc2.getPos().getRow()){
                     newPlayer.gotCaught();
                     if(lives[2] != null){
@@ -113,7 +113,7 @@ public class Game {
                 }
             }
             if(mc3!=null){
-                mc3.move();
+                mc3.move(newPlayer);
                 if(newPlayer.getPos().getCol() == mc3.getPos().getCol() && newPlayer.getPos().getRow() == mc3.getPos().getRow()){
                     newPlayer.gotCaught();
                     if(lives[2] != null){
@@ -128,14 +128,14 @@ public class Game {
                 }
             }
 
-            if(score>= 5000 && mc2 == null){
+            if(score>= 10000 && mc2 == null){
                 mc2 = new Mcs(field, new Position(field), PickAPlayer.CHRISTINA);
-                delay = 250;
+                delay = 300;
             }
 
-            if(score>= 15000 && mc3 == null){
+            if(score>= 20000 && mc3 == null){
                 mc3 = new Mcs(field, new Position(field), PickAPlayer.CATARINA);
-                delay = 150;
+                delay = 250;
             }
 
             if(score >= 25000 && pointsObj[0]!= null){
@@ -159,7 +159,6 @@ public class Game {
                     if (newPlayer.getPos().getRow() == pointsObj[p].getPos().getRow() && newPlayer.getPos().getCol() == pointsObj[p].getPos().getCol()) {
                         score += pointsObj[p].collect();
                         pointsObj[p] = objectivesFactory.spawnObjectives();
-                        System.out.println(score);
                     }
                 }
             }
@@ -168,11 +167,10 @@ public class Game {
             } catch (InterruptedException c){
                 break;
             }
-            mc.move();
+            mc.move(newPlayer);
             if(!newPlayer.isDead() && !playerWins){
                 printScore.delete();
             }
-
         }
 
         if(newPlayer.isDead()){

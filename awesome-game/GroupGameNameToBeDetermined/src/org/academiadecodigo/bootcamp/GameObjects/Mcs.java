@@ -8,16 +8,86 @@ public class Mcs extends Person{
         super(field,pos,player);
     }
 
-    public void move(){
-        switch((int) (Math.random()*4)) {
+    public void move(CodeCadets player){
+        int nextMove;
+        int colDiff = Math.abs(getPos().getCol()-player.getPos().getCol());
+        int rowDiff = Math.abs(getPos().getRow()-player.getPos().getRow());
+        int colDir = getPos().getCol()-player.getPos().getCol();
+        int rowDir = getPos().getRow()-player.getPos().getRow();
+        if(colDiff > rowDiff){
+            if(colDir < 0 ){
+                nextMove = 3;
+            } else {
+                nextMove = 1;
+            }
+        } else if(colDiff==rowDiff){
+            if(colDir < 0){
+                nextMove = (int) ((Math.random()*2)+2);
+            } else {
+                nextMove = (int) (Math.random()*2);
+            }
+        } else {
+            if(rowDir < 0){
+                nextMove = 0;
+            } else {
+                nextMove = 2;
+            }
+        }
+
+        switch(nextMove) {
             case 0:
-                moveUp();
-                break;
-            case 1:
                 moveDown();
                 break;
-            case 2:
+            case 1:
                 moveLeft();
+                break;
+            case 2:
+                moveUp();
+                break;
+            case 3:
+                moveRight();
+                break;
+        }
+    }
+
+    public void moveRandom(CodeCadets player){
+        int nextMove;
+        int colDiff = Math.abs(getPos().getCol()-player.getPos().getCol());
+        int rowDiff = Math.abs(getPos().getRow()-player.getPos().getRow());
+        int colDir = getPos().getCol()-player.getPos().getCol();
+        int rowDir = getPos().getRow()-player.getPos().getRow();
+        if(colDiff > rowDiff){
+            if(colDir < 0 ){
+                nextMove = 3;
+            } else {
+                nextMove = 1;
+            }
+        } else if(colDiff==rowDiff){
+            if(colDir < 0){
+                nextMove = (int) ((Math.random()*2)+2);
+            } else {
+                nextMove = (int) (Math.random()*2);
+            }
+        } else {
+            if(rowDir < 0){
+                nextMove = 0;
+            } else {
+                nextMove = 2;
+            }
+        }
+        if(Math.random() < 0.7){
+            nextMove = (int) (Math.random()*4);
+        }
+
+        switch(nextMove) {
+            case 0:
+                moveDown();
+                break;
+            case 1:
+                moveLeft();
+                break;
+            case 2:
+                moveUp();
                 break;
             case 3:
                 moveRight();
