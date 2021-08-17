@@ -12,6 +12,7 @@ public class ObjectivesFactory {
 
     public Points spawnObjectives(){
         Points newObjectives;
+
         switch((int) (Math.random()*(Objectives.values().length-1))){
             case 0:
                 newObjectives = new Points(field, Objectives.DUCK);

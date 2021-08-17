@@ -70,9 +70,8 @@ public class Game {
         Picture[] lives= {live1, live2, live3};
         playerOne=player;
         field.drawField();
-        Position playerPos = new Position(8,8,field);
         Mcs mc = new Mcs(field, new Position(field), PickAPlayer.RAQUEL);
-        CodeCadets newPlayer = new CodeCadets(field, playerPos, playerOne);
+        CodeCadets newPlayer = new CodeCadets(field, new Position(8,8,field), playerOne);
         Controller controller= new Controller(newPlayer);
         controller.init();
         spawnObj();
@@ -85,6 +84,7 @@ public class Game {
         while (!newPlayer.isDead() && !playerWins){
             printScore = new Text(field.getWidth() -85, field.getHeight() +10, "Score: "+score.toString());
             printScore.draw();
+
             if(newPlayer.getPos().getCol() == mc.getPos().getCol() && newPlayer.getPos().getRow() == mc.getPos().getRow()){
                 newPlayer.gotCaught();
                 if(lives[2] != null){
@@ -138,12 +138,7 @@ public class Game {
                 delay = 250;
             }
 
-            if(score >= 25000 && pointsObj[0]!= null){
-                highScoreReached=true;
-                for (int i = 0; i< pointsObj.length;i++){
-                    pointsObj[i].collect();
-                }
-            }
+
             if(highScoreReached && pointsObj[0] != null) {
                 pointsObj[0]=null;
                 winCon = new Points(field, Objectives.FINALPRIZE);
@@ -154,6 +149,16 @@ public class Game {
                     playerWins=true;
                 }
             }
+
+            if(score >= 25000 && pointsObj[0]!= null){
+                highScoreReached=true;
+                for (int i = 0; i< pointsObj.length;i++){
+                    if(pointsObj[i]!=null) {
+                        pointsObj[i].collect();
+                    }
+                }
+            }
+
             if(pointsObj[0]!=null) {
                 for (int p = 0; p < pointsObj.length; p++) {
                     if (newPlayer.getPos().getRow() == pointsObj[p].getPos().getRow() && newPlayer.getPos().getCol() == pointsObj[p].getPos().getCol()) {
@@ -162,12 +167,14 @@ public class Game {
                     }
                 }
             }
+
             try {
                 Thread.sleep(delay);
             } catch (InterruptedException c){
                 break;
             }
             mc.move(newPlayer);
+
             if(!newPlayer.isDead() && !playerWins){
                 printScore.delete();
             }

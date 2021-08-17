@@ -4,6 +4,7 @@ import org.academiadecodigo.bootcamp.GameEnvironment.Field;
 import org.academiadecodigo.bootcamp.GameEnvironment.Position;
 
 public class Mcs extends Person{
+
     public Mcs(Field field, Position pos, PickAPlayer player){
         super(field,pos,player);
     }
@@ -22,27 +23,27 @@ public class Mcs extends Person{
             }
         } else if(colDiff==rowDiff){
             if(colDir < 0){
-                nextMove = (int) ((Math.random()*2)+2);
-            } else {
                 nextMove = (int) (Math.random()*2);
+            } else {
+                nextMove = (int) ((Math.random()*2)+2);
             }
         } else {
             if(rowDir < 0){
-                nextMove = 0;
-            } else {
                 nextMove = 2;
+            } else {
+                nextMove = 0;
             }
         }
 
         switch(nextMove) {
             case 0:
-                moveDown();
+                moveUp();
                 break;
             case 1:
                 moveLeft();
                 break;
             case 2:
-                moveUp();
+                moveDown();
                 break;
             case 3:
                 moveRight();
@@ -70,12 +71,13 @@ public class Mcs extends Person{
             }
         } else {
             if(rowDir < 0){
-                nextMove = 0;
-            } else {
                 nextMove = 2;
+            } else {
+                nextMove = 0;
             }
         }
-        if(Math.random() < 0.7){
+
+        if(Math.random() < 0.5){
             nextMove = (int) (Math.random()*4);
         }
 

@@ -20,10 +20,7 @@ public class Controller implements KeyboardHandler {
         KeyboardEvent moveLeftEvent = new KeyboardEvent();
         KeyboardEvent moveUpEvent = new KeyboardEvent();
         KeyboardEvent moveDownEvent = new KeyboardEvent();
-        KeyboardEvent stopMoveRight = new KeyboardEvent();
-        KeyboardEvent stopMoveLeft = new KeyboardEvent();
-        KeyboardEvent stopMoveUp = new KeyboardEvent();
-        KeyboardEvent stopMoveDown = new KeyboardEvent();
+
 
 
         moveRightEvent.setKey(KeyboardEvent.KEY_RIGHT);
@@ -35,7 +32,17 @@ public class Controller implements KeyboardHandler {
         moveDownEvent.setKey(KeyboardEvent.KEY_DOWN);
         moveDownEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
+        keyboard.addEventListener(moveRightEvent);
+        keyboard.addEventListener(moveLeftEvent);
+        keyboard.addEventListener(moveUpEvent);
+        keyboard.addEventListener(moveDownEvent);
 
+
+
+        KeyboardEvent stopMoveRight = new KeyboardEvent();
+        KeyboardEvent stopMoveLeft = new KeyboardEvent();
+        KeyboardEvent stopMoveUp = new KeyboardEvent();
+        KeyboardEvent stopMoveDown = new KeyboardEvent();
         stopMoveRight.setKey(KeyboardEvent.KEY_RIGHT);
         stopMoveRight.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         stopMoveLeft.setKey(KeyboardEvent.KEY_LEFT);
@@ -44,10 +51,7 @@ public class Controller implements KeyboardHandler {
         stopMoveUp.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         stopMoveDown.setKey(KeyboardEvent.KEY_DOWN);
         stopMoveDown.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
-        keyboard.addEventListener(moveRightEvent);
-        keyboard.addEventListener(moveLeftEvent);
-        keyboard.addEventListener(moveUpEvent);
-        keyboard.addEventListener(moveDownEvent);
+
         keyboard.addEventListener(stopMoveDown);
         keyboard.addEventListener(stopMoveUp);
         keyboard.addEventListener(stopMoveLeft);

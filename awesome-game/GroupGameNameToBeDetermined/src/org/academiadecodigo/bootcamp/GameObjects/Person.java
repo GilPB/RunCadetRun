@@ -32,7 +32,8 @@ public abstract class Person {
             return;
         }
         pic.translate(Field.CELL_SIZE, 0);
-        pos.setCol(getPos().getCol() + 1);
+        pos.setCol(pos.getCol()+1);
+
     }
     public void moveLeft(){
         if(getPic().getX()==field.getPicture().getX()){
