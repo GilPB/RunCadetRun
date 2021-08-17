@@ -1,7 +1,7 @@
 # RunCadetRun
 
 Hi!! This project is a game designed and developed by me and two of my colleagues from <Academia de Código_>, Hugo Silveira and Gil Pinto Basto.
-<span>For this project we had one week to develop it in Java with a simple graphics library provided by Academia, <strong>when we were only on our 4th bootcamp week, with none of us having prior experience.</strong>
+<span>For this project we had one week to develop it in Java with a [simple graphics library](https://github.com/academia-de-codigo/simple-graphics) provided by Academia, <strong>when we were only on our 4th bootcamp week, with none of us having prior experience.</strong>
 
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.37.36.png" alt="menu.png"/>
   
