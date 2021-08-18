@@ -14,7 +14,7 @@ The first interaction with the game is self explanatory by a series of introduct
   
 ## Concept
   
-Our approach was to build a pacman like game with our bootcamp experience as you can read in the image above, at the start we thought we could build a maze and have the game play around it but as time was short for us, unexperienced students, we settled by doing it on a open field and if we had the time by end, we would try to implement that.
+Our approach was to build a pacman like game with our bootcamp experience as you can read in the image above, at the start we thought we could build a maze and have the game play around it but as time was short for us, unexperienced students, we settled our MVP by doing it on a open field and if we had the time by end, we would try to implement that.
 The user can choose from a pool of 12 code cadets, us developers included.
   
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.40.17.png" alt="menu3.png"/>
