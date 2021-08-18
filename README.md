@@ -26,8 +26,8 @@ As you catch the objects your score rises, and the MC moves towards you, if she 
   
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.41.22.png" alt="menu3.png"/>
 
-As your score increases more MC's appear, to a maximum of 3, and their speed rises, the 2nd MC spawns when your score is higher than 10k, and the 3rd when it reaches 20k.
-When your score surpasses 25k all the objects disappear and the last one spawns, and if you are able to catch it you win, which is a reference to our graduation.
+As your score increases, more MC's appear to a maximum of 3 and their speed rise, the 2nd MC spawns when your score is higher than 10k and the 3rd when it reaches 20k.
+When your score surpasses 25k all the objects disappear and the last one spawns, and if you are able to catch it you win, which is a reference to our "graduation".
   
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.44.04.png" alt="menu3.png"/>
 
