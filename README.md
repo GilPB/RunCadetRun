@@ -32,10 +32,32 @@ When your score surpasses 25k all the objects disappear and the last one spawns,
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.44.04.png" alt="menu3.png"/>
 
 
-To exit the game you have to hard close it, by typing "control + C" on the console(sorry but the lack of experience is noticeable :)).  
+To exit the game you have to hard close it, by typing "control + C" on the console (sorry but the lack of experience is noticeable :)).  
   
 ## Conclusion
 Our main goal was also to give to each one of our colleagues from the bootcamp something to remember our class by, doing it in a fun way.
 We were proud of the finished project since it was the first real project by ourselves, but we were also feeling that we could've done much better.
+  
+## How to run the project
+
+```bash
+# clone repository
+git clone https://github.com/fredericobgoncalves/RunCadetRun
+  
+# enter the jar folder
+cd RunCadetRun
+  
+# run the jar
+java -jar Run_Cadet_Run.jar
+```
+  
+## If you want to reach us
+
+Frederico Gonçalves
+<a href=“http://www.linkedin.com/in/fredericobgoncalves/” target=“_blank”><img src=“https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white” target=“_blank”></a>
+Hugo Silveira
+<a href=“https://www.linkedin.com/in/hugompsilveira/” target=“_blank”><img src=“https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white” target=“_blank”></a>
+Gil Pinto Basto
+<a href=“https://www.linkedin.com/in/gilpb/” target=“_blank”><img src=“https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white” target=“_blank”></a>
 
 
