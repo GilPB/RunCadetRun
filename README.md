@@ -50,14 +50,5 @@ cd RunCadetRun
 # run the jar
 java -jar Run_Cadet_Run.jar
 ```
-  
-## If you want to reach us
-
-Frederico Gonçalves
-<a href=“http://www.linkedin.com/in/fredericobgoncalves/” target=“_blank”><img src=“https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white” target=“_blank”></a>
-Hugo Silveira
-<a href=“https://www.linkedin.com/in/hugompsilveira/” target=“_blank”><img src=“https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white” target=“_blank”></a>
-Gil Pinto Basto
-<a href=“https://www.linkedin.com/in/gilpb/” target=“_blank”><img src=“https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white” target=“_blank”></a>
 
 
