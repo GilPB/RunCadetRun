@@ -6,7 +6,6 @@ Hi!! This project is a game designed and developed by me and two of my colleague
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.37.36.png" alt="menu.png"/>
   
 ## Menus
-<p></p>
   
 The first interaction with the game is self explanatory by a series of introductory menus, although it isn't possible to navigate between them after you advance.
   
@@ -57,10 +56,12 @@ Frederico Gonçalves
 
 Gil Pinto Basto
   
+<a href="https://github.com/GilPB" rel="noopener noreferrer" target="_blank"><img src="https://www.kindpng.com/picc/m/128-1280187_github-logo-png-github-transparent-png.png" alt="github.png" width="111px"></a>  
 [![linkedIn](https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gilpb/)
 
 Hugo Silveira
   
+<a href="https://github.com/madshot10" rel="noopener noreferrer" target="_blank"><img src="https://www.kindpng.com/picc/m/128-1280187_github-logo-png-github-transparent-png.png" alt="github.png" width="111px"></a>   
 [![linkedIn](https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hugompsilveira/)
 
 
