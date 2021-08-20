@@ -1,6 +1,6 @@
 # RunCadetRun
 
-Hi!! This project is a game designed and developed by me and two of my colleagues from <Academia de Código_>, Hugo Silveira and Gil Pinto Basto.
+Hi!! This project is a game designed and developed by me and two of my colleagues from <Academia de Código_>, Hugo Silveira and Frederico Gonçalves.
 <span>For this project we had one week to develop it in Java with a [simple graphics library](https://github.com/academia-de-codigo/simple-graphics) provided by Academia, <strong>when we were only on our 4th bootcamp week, with none of us having prior experience.</strong>
 
 <img src="https://github.com/fredericobgoncalves/RunCadetRun/blob/master/GamePictures/Screenshot%202021-08-17%20at%2015.37.36.png" alt="menu.png"/>
@@ -41,7 +41,7 @@ We were proud of the finished project since it was the first real project by our
 
 ```bash
 # clone repository
-git clone https://github.com/fredericobgoncalves/RunCadetRun
+git clone https://github.com/GilPB/RunCadetRun
   
 # enter the jar folder
 cd RunCadetRun
@@ -52,11 +52,11 @@ java -jar Run_Cadet_Run.jar
 ## If you want to reach us
 Frederico Gonçalves
 
+<a href="https://github.com/fredericobgoncalves" rel="noopener noreferrer" target="_blank"><img src="https://www.kindpng.com/picc/m/128-1280187_github-logo-png-github-transparent-png.png" alt="github.png" width="111px"></a>     
 [![linkedIn](https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fredericobgoncalves/)
 
 Gil Pinto Basto
-  
-<a href="https://github.com/GilPB" rel="noopener noreferrer" target="_blank"><img src="https://www.kindpng.com/picc/m/128-1280187_github-logo-png-github-transparent-png.png" alt="github.png" width="111px"></a>  
+    
 [![linkedIn](https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gilpb/)
 
 Hugo Silveira
